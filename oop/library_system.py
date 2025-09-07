@@ -20,14 +20,14 @@ class PrintBook(Book):
 
 
 class Library:
-    def __init__(self, book:list=None):
-        self.book = []  # avoid mutable default
+    def __init__(self, books:list=None):
+        self.books = []  # avoid mutable default
 
     def add_book(self, book):
-        self.book.append(book)
+        self.books.append(book)
 
     def list_books(self):
-        for book in self.book:
+        for book in self.books:
             if isinstance(book, EBook):
                 print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
             elif isinstance(book, PrintBook):
