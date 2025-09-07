@@ -20,14 +20,14 @@ class PrintBook(Book):
 
 
 class Library:
-    def __init__(self, book:list=None):
-        self.book = []  # avoid mutable default arg
+    def __init__(self, books:list=None):
+        self.books = books # avoid mutable default arg
 
     def add_book(self, book):
         self.book.append(book)
 
     def list_books(self):
-        for book in self.book:
+        for book in self.books:
             if isinstance(book, (EBook, PrintBook)):   # subclasses with page_count
                 print(f"{book.__class__.__name__}: {book.title}, by {book.author}, Page Count: {book.page_count}")
             elif isinstance(book, Book):  # base class
