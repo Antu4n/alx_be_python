@@ -21,7 +21,7 @@ class PrintBook(Book):
 
 class Library:
     def __init__(self, book:list=None):
-        self.book = book or []  # avoid mutable default arg
+        self.book = []  # avoid mutable default arg
 
     def add_book(self, book):
         self.book.append(book)
